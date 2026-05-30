@@ -1,0 +1,430 @@
+:root {
+    /* Cyber/Neon Green Palette */
+    --bg-dark: #050505;
+    --bg-card: rgba(15, 15, 15, 0.6);
+    --neon-green: #00ff66;
+    --cyber-green: #39ff14;
+    --dark-green: #003314;
+    
+    /* Text */
+    --text-main: #f0f0f0;
+    --text-muted: #a0a0a0;
+    
+    /* Glassmorphism */
+    --glass-border: rgba(0, 255, 102, 0.15);
+    --glass-border-hover: rgba(0, 255, 102, 0.5);
+    
+    /* Typography */
+    --font-primary: 'Space Grotesk', sans-serif;
+    --font-calligraphy: 'Pacifico', cursive;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+::selection {
+    background: var(--neon-green);
+    color: var(--bg-dark);
+}
+
+a {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Background Glows */
+.glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.orb-1 {
+    top: -10%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: var(--neon-green);
+}
+
+.orb-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: var(--cyber-green);
+}
+
+/* Navigation */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--neon-green);
+}
+
+.nav-links a {
+    margin-left: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: var(--neon-green);
+}
+
+/* Typography & Utilities */
+.cyber-text {
+    color: var(--neon-green);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.cyber-accent {
+    color: var(--neon-green);
+    margin-right: 10px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 40px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 2px solid var(--neon-green);
+    padding: 5px;
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.2);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.moniker {
+    font-family: var(--font-calligraphy);
+    font-weight: 700;
+    font-size: clamp(4rem, 10vw, 6rem) !important;
+    letter-spacing: 2px !important;
+    text-transform: lowercase;
+    background: -webkit-linear-gradient(45deg, #fff, var(--neon-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calligraphy {
+    font-family: var(--font-calligraphy);
+    font-size: 2rem;
+    text-transform: lowercase;
+}
+
+.hero h2 {
+    margin-bottom: 30px;
+}
+
+.hero-bio {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.1) inset;
+}
+
+.btn-primary:hover {
+    background: var(--neon-green);
+    color: var(--bg-dark);
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.4);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    padding: 30px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--glass-border-hover);
+}
+
+/* Mouse Glow Effect logic handles .card-glow via JS */
+.card-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0,255,102,0.1) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.project-card:hover .card-glow {
+    opacity: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.project-header h3 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.project-links a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+
+.project-links a:hover {
+    color: var(--neon-green);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack span {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--neon-green);
+    background: var(--dark-green);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px 100px;
+}
+
+.contact-card {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.contact-card h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.email-link {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.email-link i {
+    margin-right: 10px;
+}
+
+.email-link:hover {
+    text-shadow: 0 0 15px rgba(0,255,102,0.6);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    background: var(--neon-green);
+    color: var(--bg-dark);
+    border-color: var(--neon-green);
+    box-shadow: 0 0 20px rgba(0,255,102,0.4);
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 40px 20px;
+    }
+    
+    .email-link {
+        font-size: 1.2rem;
+    }
+}
